@@ -12,7 +12,6 @@ def partition_original_docs(raw_data, raw_data_depth, processed_data,verbose):
 	import os
 	import gzip
 	
-	# import xml.etree.ElementTree as ET
 	import lxml
 	from bs4 import BeautifulSoup
 	
@@ -61,7 +60,11 @@ def partition_original_docs(raw_data, raw_data_depth, processed_data,verbose):
 				if doc_type not in unique_doc_types:
 					unique_doc_types.add(doc_type)
 
-			main_headline = clean_whitespace(d.find('HEADLINE').get_text())
+			h = d.find('HEADLINE')
+			if h is None:
+				main_headline = ''
+			else:
+				main_headline = clean_whitespace(h.get_text())
 			
 			title = ''
 			titledone = ''
@@ -73,7 +76,7 @@ def partition_original_docs(raw_data, raw_data_depth, processed_data,verbose):
 
 			# traversing elements within doc
 			for e in d.find_all():
-			
+				
 				etext = clean_whitespace(e.get_text())
 				
 				# uncomment to reveal raw elements
@@ -130,7 +133,8 @@ def partition_original_docs(raw_data, raw_data_depth, processed_data,verbose):
 					
 			if doc_complete:
 				fo = open(processed_data + '/' + doc_id, "w")
-				fo.write(main_headline + '\n' + fulltext)
+				# fo.write(main_headline + '\n' + fulltext)
+				fo.write(current_doc.decode())
 				fo.close()
 
 		total_doc_count += doc_count

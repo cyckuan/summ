@@ -15,6 +15,6 @@ def recurse_folder(startdir,targetlevel,currentlevel=0):
 		else:
 			if os.path.isdir(d):
 				print(str(currentlevel) + ' : ' + d)
-				result = recurse_folder(d,targetlevel,currentlevel+1)
+				result = result + recurse_folder(d,targetlevel,currentlevel+1)
 
 	return result
