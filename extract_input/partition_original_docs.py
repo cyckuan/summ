@@ -47,16 +47,15 @@ def partition_original_docs(raw_data, raw_data_depth, processed_data,verbose):
 			current_doc = original[doc_start_pos:doc_end_pos]
 			doc_start_pos = original.find(doc_tag_start, doc_end_pos)
 			doc_count += 1
-			# print(current_doc)
 
 			d = BeautifulSoup(current_doc, "lxml-xml")
 
-			if d.has_attr('id'):
-				doc_id = d['id']
+			doc = d.find('DOC')
+			doc_id = doc['id'] if doc.has_attr('id') else ''
 
 			doc_type = ''
-			if d.has_attr('type'):
-				doc_type = d['type']
+			if doc.has_attr('type'):
+				doc_type = doc['type']
 				if doc_type not in unique_doc_types:
 					unique_doc_types.add(doc_type)
 
@@ -131,7 +130,7 @@ def partition_original_docs(raw_data, raw_data_depth, processed_data,verbose):
 						print()
 					article_complete = False
 					
-			if doc_complete:
+			if doc_complete and doc_id != '':
 				fo = open(processed_data + '/' + doc_id, "w")
 				# fo.write(main_headline + '\n' + fulltext)
 				fo.write(current_doc.decode())
