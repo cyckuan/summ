@@ -15,7 +15,7 @@ def main():
     # partition_original_docs(paths.source_aquaint_original,3,paths.source_aquaint_docs,False)
 
     # prep data for TAC 
-    partition_original_docs(paths.source_aquaint2_original,1,paths.source_aquaint2_docs,False)
+    # partition_original_docs(paths.source_aquaint2_original,1,paths.source_aquaint2_docs,False)
 
     # from extract_input.convert_topicxml_duc_to_tac import convert_topicxml_duc_to_tac as convert_topicxml_duc_to_tac
     # convert_topicxml_duc_to_tac(paths.source_duc2007_topicxml_orig,paths.source_duc2007_topicxml,paths.source_aquaint_docs,paths.source_duc2007_docs)

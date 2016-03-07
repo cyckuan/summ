@@ -17,10 +17,12 @@ def rebuild_doc_set(input_basename,document_path):
         folder_path = document_path + '/' + karray[0]
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
-        
-        full_document_path = folder_path + '/' + karray[1]
-        with open(full_document_path, 'w') as df:
-            df.write('\n'.join(v))
+
+        print(text_header[k])
+            
+        # full_document_path = folder_path + '/' + karray[1]
+        # with open(full_document_path, 'w') as df:
+        #    df.write('\n'.join(v))
             
 
         

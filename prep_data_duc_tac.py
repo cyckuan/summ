@@ -32,21 +32,21 @@ def main():
     from preprocessing.repair_duc_data import repair_duc_data as repair_duc_data
     from preprocessing.rebuild_doc_set import rebuild_doc_set as rebuild_doc_set
     
-    # extract_sentences_from_text('/data/sourcedata/aquaint/docs','xml1','/data/summ/aquaint',0)
-    # extract_sentences_from_text('/data/sourcedata/aquaint2/docs','xml2','/data/summ/aquaint2',0)
+    # extract_sentences_from_text('/data/sourcedata/aquaint/docs','xml1','/data/summ/data/aquaint',0)
+    # extract_sentences_from_text('/data/sourcedata/aquaint2/docs','xml2','/data/summ/data/aquaint2',0)
         
-    extract_sentences_from_text('/data/swing/SWING/data/duc2006/docs','xml1','/data/summ/original_sentences_duc2006',2)
-    repair_duc_data('/data/summ/original_sentences_duc2006')
-    # rebuild_doc_set('/data/summ/original_sentences_duc2006','/data/swing/SWING/data/duc2006/docs_cleaned/sets')
+    extract_sentences_from_text('/data/swing/SWING/data/duc2006/docs','xml1','/data/summ/data/original_sentences_duc2006',2)
+    repair_duc_data('/data/summ/data/original_sentences_duc2006')
+    # rebuild_doc_set('/data/summ/data/original_sentences_duc2006','/data/swing/SWING/data/duc2006/docs_cleaned/sets')
     
-    extract_sentences_from_text('/data/swing/SWING/data/duc2007/docs','xml1','/data/summ/original_sentences_duc2007',2)
-    repair_duc_data('/data/summ/original_sentences_duc2007')
-    # rebuild_doc_set('/data/summ/original_sentences_duc2007','/data/swing/SWING/data/duc2007/docs_cleaned/sets')
+    extract_sentences_from_text('/data/swing/SWING/data/duc2007/docs','xml1','/data/summ/data/original_sentences_duc2007',2)
+    repair_duc_data('/data/summ/data/original_sentences_duc2007')
+    # rebuild_doc_set('/data/summ/data/original_sentences_duc2007','/data/swing/SWING/data/duc2007/docs_cleaned/sets')
     
-    #extract_sentences_from_text('/data/swing/SWING/evaluation/duc2007/ROUGE/models','/data/summ/summary_sentences_duc2007_models')
-    #extract_sentences_from_text('/data/swing/SWING/data/Summaries/csi.sentence','/data/summ/summary_sentences_duc2007_peers')
+    #extract_sentences_from_text('/data/swing/SWING/evaluation/duc2007/ROUGE/models','/data/summ/data/summary_sentences_duc2007_models')
+    #extract_sentences_from_text('/data/swing/SWING/data/Summaries/csi.sentence','/data/summ/data/summary_sentences_duc2007_peers')
     
-    #extract_sentences_from_text('/data/swing/SWING/data/duc2007','/data/summ/original_sentences_duc2007',3)
+    #extract_sentences_from_text('/data/swing/SWING/data/duc2007','/data/summ/data/original_sentences_duc2007',3)
     
     #from subprocess import call
 
